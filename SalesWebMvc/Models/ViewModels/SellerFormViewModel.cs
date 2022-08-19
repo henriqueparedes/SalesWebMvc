@@ -4,6 +4,5 @@
     {
         public Seller Seller { get; set; }
         public ICollection<Departament> Departaments { get; set; }
-
     }
 }

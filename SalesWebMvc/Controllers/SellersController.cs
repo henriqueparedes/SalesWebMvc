@@ -9,7 +9,7 @@ namespace SalesWebMvc.Controllers
     {
         private readonly SellerService _sellerService;
         private readonly DepartamentService _departamentService;
-                
+
         public SellersController(SellerService sellerService, DepartamentService departamentService)
         {
             this._sellerService = sellerService;

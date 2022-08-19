@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SalesWebMvc.Data;
 using SalesWebMvc.Models;
@@ -22,9 +17,9 @@ namespace SalesWebMvc.Controllers
         // GET: Departaments
         public async Task<IActionResult> Index()
         {
-              return _context.Departament != null ? 
-                          View(await _context.Departament.ToListAsync()) :
-                          Problem("Entity set 'SalesWebMvcContext.Departament'  is null.");
+            return _context.Departament != null ?
+                        View(await _context.Departament.ToListAsync()) :
+                        Problem("Entity set 'SalesWebMvcContext.Departament'  is null.");
         }
 
         // GET: Departaments/Details/5
@@ -150,14 +145,14 @@ namespace SalesWebMvc.Controllers
             {
                 _context.Departament.Remove(departament);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool DepartamentExists(int id)
         {
-          return (_context.Departament?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Departament?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

@@ -12,7 +12,6 @@ builder.Services.AddScoped<SeedingService>();
 builder.Services.AddScoped<SellerService>();
 builder.Services.AddScoped<DepartamentService>();
 
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -23,7 +22,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
- static void Seed(WebApplication app)
+static void Seed(WebApplication app)
 {
     using var scope = app.Services.CreateScope();
     SeedingService seedingService = scope.ServiceProvider.GetRequiredService<SeedingService>();
@@ -33,7 +32,6 @@ if (!app.Environment.IsDevelopment())
 }
 
 Seed(app);
-
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

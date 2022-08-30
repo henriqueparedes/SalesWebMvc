@@ -40,7 +40,6 @@ static void Seed(WebApplication app)
     SeedingService seedingService = scope.ServiceProvider.GetRequiredService<SeedingService>();
 
     seedingService.Seed();
-    Console.WriteLine("teste");
 }
 
 Seed(app);
